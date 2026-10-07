@@ -13,4 +13,48 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-main), "Helvetica Neue", Arial, sans-serif;
+  font-variation-settings: "wght" var(--font-weight-text);
+
+  background-image: var(--page-background);
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* Переиспользуемый класс для всех блоков проекта */
+.content-width {
+  box-sizing: border-box;
+  inline-size: var(--content-width);
+  margin-inline: auto;
+}
+
+.header {
+  margin-block: clamp(16px, 5vw, 56px) clamp(24px, 6vw, 64px);
+  padding: clamp(20px, 6vw, 56px) clamp(12px, 4vw, 40px);
+
+  background-color: #fff;
+  border: 1px solid #1a1a1a;
+  text-align: center;
+}
+
+.header__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(8px, 2vw, 20px);
+
+  margin: 0;
+  font-family: var(--font-accent), monospace;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.header__logo {
+  font-size: clamp(20px, 6vw, 65px);
+  line-height: 1;
+}
+
+.header__subtitle {
+  font-size: clamp(8px, 2vw, 23px);
+  line-height: 1.2;
+  text-transform: uppercase;
 }
