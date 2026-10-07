@@ -17,7 +17,48 @@
         <span class="header__subtitle">Закрывающий тег</span>
       </h1>
     </header>
-    <main></main>
+    <main class="content">
+      <article class="card content-width">
+        <h2 class="card__title">
+          Фритрек и нулевой спринт: Подготовка к работе
+        </h2>
+
+        <img
+          class="card__image"
+          src="./images/default_img.png"
+          alt="Пиксельный фургон на фоне ночного пейзажа"
+        />
+
+        <div class="card__body">
+          <p class="card__text">
+            Это было самое начало пути. На этом этапе важно было проникнуться
+            основами и настроиться на учёбу. И, возможно, подумать, как новые
+            знания могут повлиять на ваше будущее.
+          </p>
+          <p class="card__text">
+            Место для ваших воспоминаний о начале обучения.
+          </p>
+        </div>
+
+        <div class="card__actions">
+          <button
+            class="card__icon-button"
+            type="button"
+            aria-label="Поставить лайк"
+          >
+            <img src="./svg/heart_initial.svg">
+          </button>
+          <button class="card__like-button" type="button">
+            <span class="button__text">Like</span>
+          </button>
+        </div>
+      </article>
+
+      <button class="save-button content-width" type="button">
+        <img src="./svg/floppy.svg" width="21" height="21">
+        <span class="button__text">Сохранить на память</span>
+      </button>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>

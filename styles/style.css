@@ -20,6 +20,7 @@
   background-size: cover;
   background-attachment: fixed;
 }
+
 /* Переиспользуемый класс для всех блоков проекта */
 .content-width {
   box-sizing: border-box;
@@ -57,4 +58,108 @@
   font-size: clamp(8px, 2vw, 23px);
   line-height: 1.2;
   text-transform: uppercase;
+}
+
+/* Main */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--card-gap);
+  padding-block-end: var(--card-gap);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.card__title {
+  margin: 0;
+  padding: clamp(4px, 1vw, 5px) clamp(6px, 1.5vw, 10px);
+  border-block-end: 1px solid var(--color-border);
+  font-size: clamp(10px, 2.2vw, 18px);
+  font-variation-settings: "wght" var(--font-weight-heading);
+  line-height: 1.2;
+}
+
+.card__image {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  /* aspect-ratio: 4 / 3; */
+  object-fit: cover;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 3vw, 25px);
+  padding: var(--card-padding);
+}
+
+.card__text {
+  margin: 0;
+  font-size: clamp(11px, 2.4vw, 18px);
+  line-height: 1.2;
+}
+
+.card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(8px, 2vw, 12px);
+  padding: clamp(6px, 1.5vw, 25px) var(--card-padding);
+  padding-top: 0;
+}
+
+.card__icon-button,
+.card__like-button,
+.save-button {
+  font: inherit;
+  color: inherit;
+  background-color: var(--color-surface);
+  cursor: pointer;
+}
+
+.card__icon-button {
+  display: flex;
+  padding: 0;
+  border: none;
+}
+
+.like-icon {
+  display: block;
+  inline-size: clamp(16px, 4vw, 24px);
+  block-size: auto;
+}
+
+.card__like-button {
+  min-inline-size: clamp(72px, 20vw, 130px);
+  padding: clamp(4px, 1vw, 9px) clamp(8px, 2vw, 17px);
+  border: 2px solid var(--color-border);
+
+  font-family: var(--font-accent), monospace;
+  font-size: clamp(8px, 1.8vw, 14px);
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.5vw, 10px);
+  padding: clamp(8px, 2vw, 12px);
+  border: 1px solid var(--color-border);
+
+  font-family: var(--font-accent), monospace;
+  font-size: clamp(8px, 1.8vw, 11px);
+}
+
+.save-button__icon {
+  flex-shrink: 0;
+  inline-size: clamp(12px, 3vw, 16px);
+  block-size: auto;
 }
