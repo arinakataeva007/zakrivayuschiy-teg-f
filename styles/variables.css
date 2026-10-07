@@ -21,4 +21,7 @@
 
   --card-gap: clamp(24px, 6vw, 64px);
   --card-padding: clamp(12px, 3vw, 25px);
+
+  --label-stroke-color: #fff;
+  --label-color: #000000;
 }

@@ -86,11 +86,30 @@
   line-height: 1.2;
 }
 
+.card__image-wrapper {
+  position: relative;
+}
+
+.card__label {
+  position: absolute;
+  inset-block-start: clamp(8px, 2vw, 25px);
+  inset-inline-end: clamp(8px, 2vw, 25px);
+  font-family: var(--font-accent), monospace;
+  font-size: clamp(6px, 1.5vw, 14px);
+  line-height: normal;
+  color: var(--label-color);
+  mix-blend-mode: hard-light;
+  pointer-events: none;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--label-stroke-color);
+  font-weight: var(--font-weight-text);
+  text-transform: uppercase;
+}
+
 .card__image {
   display: block;
   inline-size: 100%;
   block-size: auto;
-  /* aspect-ratio: 4 / 3; */
   object-fit: cover;
 }
 
@@ -162,4 +181,13 @@
   flex-shrink: 0;
   inline-size: clamp(12px, 3vw, 16px);
   block-size: auto;
+}
+
+/* Если браузер умеет обводку текста, используем её вместо теней */
+@supports (-webkit-text-stroke: 1px #000) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--label-stroke-color);
+    paint-order: stroke fill;
+    text-shadow: none;
+  }
 }
