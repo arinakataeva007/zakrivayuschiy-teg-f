@@ -36,7 +36,7 @@
   background-color: #fff;
   border: 2px solid #1a1a1a;
   text-align: center;
-  height: 368px;
+  height: clamp(180px, 30vw, 368px);
 }
 
 .header__title {
@@ -234,4 +234,74 @@ mix-blend-mode: hard-light;
   padding: 9px 17px;
   border: 2px solid var(--color-border);
   background: transparent;
+}
+
+@media (width <= 375px) {
+  :root {
+    --content-width: 100%;
+  }
+  .header {
+    height: 327px;
+    padding-block: 16px; 
+    margin-block-start: 100px;
+    margin-block-end: 100px;
+  }
+
+  .header__logo {
+    font-size: 49px;
+  }
+
+  .header__subtitle {
+    font-size: 14px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+
+  .card__text {
+    font-size: 18px;
+    padding: 15px;
+  }
+  .card__actions {
+    
+  }
+  .card__label {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+    font-size: 14px;
+  }
+
+  .card__like-button {
+    padding: 9px 17px;
+    font-size: 14px; 
+  }
+
+
+  .save-button {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .save-button__icon {
+    inline-size: 24px;
+    block-size: auto;
+  }
+
+
+  .dialog {
+    padding: 20px;
+  }
+
+  .dialog[open] {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 16px;
+  }
+
+  .dialog__text,
+  .dialog__button {
+    font-size: 10px;
+  }
 }
