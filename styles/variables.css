@@ -19,9 +19,12 @@
   --color-surface: #fff;
   --color-border: #000;
 
-  --card-gap: clamp(24px, 6vw, 64px);
+  --card-gap: clamp(24px, 6vw, 50px);
   --card-padding: clamp(12px, 3vw, 25px);
 
   --label-stroke-color: #fff;
   --label-color: #000000;
+
+  --dialog-backdrop: #000;
+  --dialog-width: clamp(280px, 90vw, 353px);
 }
