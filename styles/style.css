@@ -144,7 +144,6 @@
 .save-button {
   font: inherit;
   color: inherit;
-  /* background-color: var(--color-surface); */
   background: transparent;
   cursor: pointer;
 }
@@ -265,7 +264,7 @@
     line-height: normal;
   }
 
-  .card__body{
+  .card__body {
     gap: 25px;
   }
 
@@ -308,17 +307,24 @@
   }
 
   .dialog {
-    padding: 20px;
+    padding: 30px 40px;
+  }
+
+  .dialog__content {
+    gap: 30px;
+  }
+  .dialog__text-content{
+    gap: 20px;
   }
 
   .dialog[open] {
     grid-template-columns: 1fr;
     justify-items: center;
-    gap: 16px;
+    gap: 20px;
   }
 
   .dialog__text,
   .dialog__button {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
