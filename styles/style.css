@@ -73,8 +73,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  /* background-color: var(--color-surface); */
+  border: 2px solid var(--color-border);
   color: var(--color-text);
 }
 
@@ -106,13 +106,14 @@
   font-weight: var(--font-weight-text);
   text-transform: uppercase;
   opacity: 0.5;
-mix-blend-mode: hard-light;
+  mix-blend-mode: hard-light;
 }
 
 .card__image {
   display: block;
   inline-size: 100%;
   block-size: auto;
+  border-bottom: 2px solid var(--color-border);
   object-fit: cover;
 }
 
@@ -143,7 +144,8 @@ mix-blend-mode: hard-light;
 .save-button {
   font: inherit;
   color: inherit;
-  background-color: var(--color-surface);
+  /* background-color: var(--color-surface); */
+  background: transparent;
   cursor: pointer;
 }
 
@@ -209,7 +211,7 @@ mix-blend-mode: hard-light;
   flex-direction: column;
   gap: clamp(8px, 2vw, 30px);
 }
-.dialog__text-content{
+.dialog__text-content {
   display: flex;
   align-items: center;
   gap: clamp(8px, 2vw, 20px);
@@ -239,10 +241,12 @@ mix-blend-mode: hard-light;
 @media (width <= 375px) {
   :root {
     --content-width: 100%;
+    --card-padding: 25px;
+    --card-gap: 50px;
   }
   .header {
     height: 327px;
-    padding-block: 16px; 
+    padding-block: 16px;
     margin-block-start: 100px;
     margin-block-end: 100px;
   }
@@ -257,15 +261,28 @@ mix-blend-mode: hard-light;
 
   .card__title {
     font-size: 18px;
+    padding: 5px 10px;
+    line-height: normal;
+  }
+
+  .card__body{
+    gap: 25px;
   }
 
   .card__text {
     font-size: 18px;
-    padding: 15px;
+    line-height: 1.18;
   }
+
+  .card__image {
+    aspect-ratio: 371 / 371;
+  }
+
   .card__actions {
-    
+    padding: var(--card-padding);
+    padding-top: 0;
   }
+
   .card__label {
     inset-block-start: 20px;
     inset-inline-end: 20px;
@@ -274,21 +291,21 @@ mix-blend-mode: hard-light;
 
   .card__like-button {
     padding: 9px 17px;
-    font-size: 14px; 
+    min-inline-size: 130px;
+    font-size: 14px;
   }
-
 
   .save-button {
     flex-direction: column;
     gap: 8px;
-    font-size: 10px;
+    font-size: 14px;
+    padding: 15px 20px;
   }
 
   .save-button__icon {
-    inline-size: 24px;
+    inline-size: 28px;
     block-size: auto;
   }
-
 
   .dialog {
     padding: 20px;
