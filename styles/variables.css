@@ -27,4 +27,8 @@
 
   --dialog-backdrop: #000;
   --dialog-width: clamp(280px, 90vw, 353px);
+
+  --button-text-color: #fff;
+  --button-bg-color: #fff;
+  --button-fill-color: #000;
 }

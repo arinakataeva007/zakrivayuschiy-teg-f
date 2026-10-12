@@ -76,6 +76,7 @@
   flex-direction: column;
   border: 2px solid var(--color-border);
   color: var(--color-text);
+  background: var(--color-surface);
 }
 
 .card__title {
@@ -89,7 +90,37 @@
 
 .card__image-wrapper {
   position: relative;
+  overflow: hidden;
 }
+
+.card__image--blank {
+  filter: grayscale(0.8) brightness(1.15) contrast(0.90);
+}
+
+.card__image--doubt {
+  filter: contrast(1.35) saturate(1.5) hue-rotate(-25deg);
+}
+
+.card__image--ideal {
+  filter: contrast(1.5) saturate(0.9) brightness(1.05);
+}
+
+.card__image--warm {
+  filter: sepia(0.4) saturate(1.4) brightness(1.08);
+}
+
+.сard__image--angle {
+  filter: hue-rotate(150deg) saturate(1.2);
+}
+
+.card__image--tired {
+  filter: blur(4px) grayscale(0.5) brightness(0.8);
+}
+
+.card__image--now {
+  filter: contrast(1.15) saturate(1.2) brightness(3.1);
+}
+
 
 .card__label {
   position: absolute;
@@ -154,6 +185,11 @@
   border: none;
 }
 
+.card__icon-button:focus-visible {
+  outline: none;
+  border: 2px solid var(--color-border);
+}
+
 .like-icon {
   display: block;
   inline-size: clamp(16px, 4vw, 24px);
@@ -167,6 +203,12 @@
 
   font-family: var(--font-accent), monospace;
   font-size: clamp(8px, 1.8vw, 14px);
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button:focus-visible{
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--color-border);
 }
 
 .save-button {
@@ -235,6 +277,52 @@
   padding: 9px 17px;
   border: 2px solid var(--color-border);
   background: transparent;
+}
+
+.card__like-button,
+.save-button,
+.dialog__button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: var(--button-bg-color);
+}
+
+
+.card__like-button::before,
+.save-button::before,
+.dialog__button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--button-fill-color);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.card__like-button:hover::before,
+.card__like-button:focus-visible::before,
+.save-button:hover::before,
+.save-button:focus-visible::before,
+.dialog__button:hover::before,
+.dialog__button:focus-visible::before {
+  transform: translateX(0);
+}
+
+.card__like-button .button__text,
+.save-button .button__text,
+.dialog__button .button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
+}
+
+.save-button img {
+  position: relative;
+  z-index: 1;
+  filter: brightness(0) invert(1);
+  mix-blend-mode: difference;
 }
 
 @media (width <= 375px) {
