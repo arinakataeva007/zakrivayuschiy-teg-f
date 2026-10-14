@@ -92,6 +92,7 @@
 .card__image-wrapper {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 1 / 1;
 }
 
 .card__image--blank {
@@ -137,9 +138,9 @@
   pointer-events: none;
   text-shadow:
     -1px -1px 0 var(--label-stroke-color),
-     1px -1px 0 var(--label-stroke-color),
-    -1px  1px 0 var(--label-stroke-color),
-     1px  1px 0 var(--label-stroke-color);
+    1px -1px 0 var(--label-stroke-color),
+    -1px 1px 0 var(--label-stroke-color),
+    1px 1px 0 var(--label-stroke-color);
 }
 
 @supports (-webkit-text-stroke: 1px #000) or (text-stroke: 1px #000) {
@@ -167,15 +168,17 @@
 
 .card__text {
   margin: 0;
-  font-size: clamp(11px, 2.4vw, 18px);
-  line-height: 1.18;
+  font-size: 18px;
+  line-height: 1.17;
+  font-weight: var(--font-weight-text);
+  font-variation-settings: normal;
 }
 
 .card__actions {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: clamp(8px, 2vw, 12px);
+  gap: 5px;
   padding: clamp(6px, 1.5vw, 25px) var(--card-padding);
   padding-top: 0;
 }
@@ -190,29 +193,24 @@
   border: 2px solid transparent;
   transition: border 0.3s ease;
 }
-.card__icon-button:focus-visible{
+.card__icon-button:focus-visible {
   outline: none;
 }
 .card__icon-button:focus-visible svg {
   outline: none;
-  border: 2px solid var(--color-border);  
+  border: 2px solid var(--color-border);
 }
 
 .card__like-button {
-  min-inline-size: clamp(72px, 20vw, 130px);
-  padding: clamp(4px, 1vw, 9px) clamp(8px, 2vw, 17px);
   border: 2px solid var(--color-border);
-
   font-family: var(--font-accent), monospace;
-  font-size: clamp(8px, 1.8vw, 14px);
   transition: box-shadow 0.3s ease;
-
-   min-inline-size: clamp(72px, 9.03vw, 130px);
+  min-inline-size: clamp(72px, 9.03vw, 130px);
   padding: clamp(4px, 0.63vw, 9px) clamp(8px, 1.18vw, 17px);
   font-size: clamp(8px, 0.97vw, 14px);
-  line-height: 1;
-  min-block-size: clamp(24px, 2.92vw, 42px);
+  min-block-size: clamp(24px, 2.92vw, 38px);
   box-sizing: content-box;
+  line-height: 1.143;
 }
 
 .card__like-button:focus-visible {
@@ -237,7 +235,7 @@
   z-index: 1;
   filter: brightness(0) invert(1);
   mix-blend-mode: difference;
-} 
+}
 
 .dialog {
   inline-size: var(--dialog-width);
@@ -443,7 +441,7 @@
 
   .card__text {
     font-size: 18px;
-    line-height: 1.18;
+    line-height: 1.17;
   }
 
   .card__image {
