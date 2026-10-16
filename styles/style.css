@@ -405,7 +405,6 @@
 
 @media (width <= 375px) {
   :root {
-    --content-width: 100%;
     --card-padding: 25px;
     --card-gap: 50px;
   }
@@ -435,7 +434,7 @@
 
   .card__text {
     font-size: 18px;
-    line-height: 1.17;
+    line-height: 1.162;
   }
 
   .card__image {
