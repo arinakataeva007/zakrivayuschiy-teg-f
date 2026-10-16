@@ -12,8 +12,8 @@
     linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
 
   /* Ширна блока шапки */
-  --content-width: clamp(280px, 90vw, 700px);
-
+  --progress: calc((100vw - 375px) / 1065);
+  --content-width: clamp(375px, calc(375px + 325 * var(--progress)), 700px);
   /* Main  */
   --color-text: #000;
   --color-surface: #fff;
