@@ -230,13 +230,6 @@
   background: transparent;
 }
 
-.save-button__icon {
-  position: relative;
-  z-index: 1;
-  filter: brightness(0) invert(1);
-  mix-blend-mode: difference;
-}
-
 .dialog {
   inline-size: var(--dialog-width);
   padding: 30px;
@@ -333,6 +326,8 @@
   z-index: 1;
   filter: brightness(0) invert(1);
   mix-blend-mode: difference;
+  inline-size: 28px;
+  block-size: auto;
 }
 
 .save-button img {
@@ -416,8 +411,7 @@
   }
 
   .header {
-    padding-block: 125px;
-    min-block-size: 327px;
+    padding-block: 161.5px;
     margin-block-start: 100px;
     margin-block-end: 100px;
   }
@@ -471,11 +465,6 @@
     gap: 8px;
     font-size: 14px;
     padding: 15px 20px;
-  }
-
-  .save-button__icon {
-    inline-size: 28px;
-    block-size: auto;
   }
 
   .dialog {
