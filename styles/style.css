@@ -222,10 +222,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(6px, 1.5vw, 10px);
+  gap: clamp(6px, 1.5vw, 8px);
   padding: clamp(8px, 2vw, 15px) clamp(8px, 2vw, 20px);
   border: 1px solid var(--color-border);
-  font-family: var(--font-accent), monospace;
   font-size: clamp(8px, 1.8vw, 14px);
   background: transparent;
 }
@@ -326,15 +325,7 @@
   z-index: 1;
   filter: brightness(0) invert(1);
   mix-blend-mode: difference;
-  inline-size: 28px;
   block-size: auto;
-}
-
-.save-button img {
-  position: relative;
-  z-index: 1;
-  filter: brightness(0) invert(1);
-  mix-blend-mode: difference;
 }
 
 .like-icon {
@@ -464,6 +455,10 @@
     gap: 8px;
     font-size: 14px;
     padding: 15px 20px;
+  }
+
+  .save-button__icon {
+    inline-size: 28px;
   }
 
   .dialog {
